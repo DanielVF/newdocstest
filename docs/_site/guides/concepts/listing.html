@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Listing - Origin</title>
+
+  <link rel="stylesheet" href="/assets/css/highlight.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700%7CPoppins:200,300,400,500,800%7COpen+Sans:400,600,800%7CRoboto+Mono:350"/>
+  <link rel="stylesheet" href="/assets/css/site.css"/>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><a href="/">Origin Documentation</a></div>
+        <nav>
+                <a class="topNav current" href="/">Guides</a>
+                <a class="topNav " href="/reference/">API Reference</a>
+                <a class="topNav " href="/software/">Software</a>
+        </nav>
+    </div>
+
+    <div class="layout">
+        <div class="sidebar">
+            
+            
+
+
+            
+            
+            <ul>
+            
+                
+                    <li class="category"><strong>Getting started</strong>
+                        <ul>
+                                   
+                
+                <li class="normal"> 
+                    <a href="/guides/getting_started/getting-started.html">Getting Started</a> <!-- 3020-->
+                    
+                </li>
+                
+                <li class="normal"> 
+                    <a href="/guides/getting_started/local-development.html">Local Development</a> <!-- 3010-->
+                    
+                </li>
+                
+                <li class="normal"> 
+                    <a href="/guides/getting_started/contributing.html">Contributing</a> <!-- -->
+                    
+                </li>
+                
+                
+                    </ul></li>
+                 
+            
+                
+                    <li class="category"><strong>Overview</strong>
+                        <ul>
+                                   
+                
+                <li class="normal"> 
+                    <a href="/guides/overview/architecture.html">Architecture</a> <!-- 2010-->
+                    
+                </li>
+                
+                
+                    </ul></li>
+                 
+            
+                
+                    <li class="category"><strong>Concepts</strong>
+                        <ul>
+                                   
+                
+                <li class="normal"> 
+                    <a href="/guides/concepts/listing.html">Listing</a> <!-- 1100-->
+                    
+                        <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#event-sourcing">Event Sourcing</a></li>
+<li class="toc-entry toc-h2"><a href="#creating-a-listing">Creating a Listing</a></li>
+<li class="toc-entry toc-h2"><a href="#withdrawing-a-listing">Withdrawing a Listing</a></li>
+</ul>
+                    
+                </li>
+                
+                <li class="normal"> 
+                    <a href="/guides/concepts/offer.html">Offer</a> <!-- 1090-->
+                    
+                </li>
+                
+                <li class="normal"> 
+                    <a href="/guides/concepts/identity.html">Identity</a> <!-- 1-->
+                    
+                </li>
+                
+                <li class="normal"> 
+                    <a href="/guides/concepts/messaging.html">Messaging</a> <!-- 1-->
+                    
+                </li>
+                
+                
+                    </ul></li>
+                 
+            
+            </ul>
+        </div>
+        <div class="content">
+            <h1 class="title">Listing</h1>
+
+            <p>A Listing is an offer from a seller to sell, rent, announce, or exchange something. Active listings can be searched and browsed in Origin DApps.</p>
+
+<h2 id="event-sourcing">
+<a id="event-sourcing" class="anchor" href="#event-sourcing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Event Sourcing</h2>
+
+<p>The current state of a particular listing is built up from the actions that have modified it. For example:</p>
+
+<ul>
+  <li>Alice creates a listing for a selling two tickets to a local hockey game.</li>
+  <li>Bob offers to buy one ticket</li>
+  <li>Alice accepts Bob’s offer. Now the current state of the listing is one ticket available for sale.</li>
+</ul>
+
+<p>The blockchain provides an absolute ordered list of events that happened on it (block number and transaction index). This allows everyone to apply events in the same order, so everyone can calculate the same state for the listing.  In case of a conflict, everyone can agree which offers are valid and which are not. For example:</p>
+
+<ul>
+  <li>Alice creates a listing renting an apartment for two weeks.</li>
+  <li>Bob offers to rent the first week.</li>
+  <li>Alice accepts Bob’s offer.</li>
+  <li>Mallory offers to rent both weeks. Mallory’s offer is treated as invalid because it conflicts with a previously accepted offer. Mallory can withdraw her offer and her ETH at any time.</li>
+</ul>
+
+<h2 id="creating-a-listing">
+<a id="creating-a-listing" class="anchor" href="#creating-a-listing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Listing</h2>
+
+<p>A listing’s initial data is posted to IPFS as JSON (<a href="/reference/protocol/schemas.html#listing-schema">listing schema</a>). A blockchain transaction <a href="../../reference/origin-js/marketplace.html#createlisting">createListing</a> is then sent to the marketplace contract to announce the listing to the world.</p>
+
+<h2 id="withdrawing-a-listing">
+<a id="withdrawing-a-listing" class="anchor" href="#withdrawing-a-listing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Withdrawing a Listing</h2>
+
+<p>Sending the blockchain transaction <a href="../../reference/origin-js/marketplace.html#withdrawlisting">withdrawListing</a> marks a listing as no longer able to be purchased.</p>
+
+
+        </div>    
+    </div>
+
+    <footer>
+        <a href="https://www.originprotocol.com/">Origin Protocol</a>
+        <span>|</span>
+        <a href="https://dapp.originprotocol.com/">DApp</a>
+        <a href="https://github.com/OriginProtocol">GitHub</a>
+        <a href="https://www.originprotocol.com/discord">Discord</a>
+    </footer>
+</body>
