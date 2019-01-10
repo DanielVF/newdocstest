@@ -9,7 +9,7 @@ CURRENT_COMMIT=$(git log '--format=format:%H' -1)
 rm -rf _site
 git worktree add -f _site gh-pages
 
-#bundle install
+bundle install
 bundle exec jekyll build
 
 cd _site
