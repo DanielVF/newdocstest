@@ -1,15 +1,13 @@
 #!/bin/bash
-set -e # Exit immediately if something throws an error
+set -x # Exit immediately if something throws an error
 
-echo `ruby -v`
+$CURRENT_BRANCH = $(git rev-parse --abbrev-ref HEAD) 
+$CURRENT_COMMIT = $(git log '--format=format:%H' -1)
 
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) 
-CURRENT_COMMIT=$(git log '--format=format:%H' -1)
+git worktree add -f -b gh-pages _site gh-pages
 
-rm -rf _site
-git worktree add -f _site gh-pages
-
-#bundle install
+rm -rf _site/*
+bundle install
 bundle exec jekyll build
 
 cd _site
