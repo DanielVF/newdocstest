@@ -31,7 +31,6 @@ highlighter: rouge
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-toc
 
 toc:
   min_level: 2
