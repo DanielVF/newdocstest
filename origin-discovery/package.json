@@ -15,7 +15,7 @@
     "url": "https://github.com/OriginProtocol/origin/issues"
   },
   "dependencies": {
-    "apollo-server-express": "^2.2.6",
+    "apollo-server-express": "^2.14.2",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "elasticsearch": "^15.2.0",
