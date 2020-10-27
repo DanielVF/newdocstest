@@ -16,7 +16,7 @@ chardet==3.0.4
 click==6.7
 coincurve==9.0.0
 cookies==2.2.1
-cryptography==2.4.2
+cryptography==3.2
 cytoolz==0.9.0.1
 decorator==4.2.1
 envkey==1.1.0
