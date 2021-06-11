@@ -124,5 +124,5 @@ vine==1.1.4
 waitress==1.1.0
 wcwidth==0.1.7
 web3==4.2.0
-websockets==7.0
+websockets==9.1
 Werkzeug==0.14.1
