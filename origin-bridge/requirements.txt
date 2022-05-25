@@ -86,7 +86,7 @@ pyethash==0.1.27
 pyfcm==1.4.5
 pyflakes==1.6.0
 Pygments==2.2.0
-PyJWT==1.6.1
+PyJWT==2.4.0
 pyOpenSSL==17.5.0
 pysha3==1.0.2
 PySocks==1.6.8
