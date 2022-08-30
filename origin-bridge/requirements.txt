@@ -21,7 +21,7 @@ cytoolz==0.9.0.1
 decorator==4.2.1
 envkey==1.1.0
 eth-abi==1.2.2
-eth-account==0.2.2
+eth-account==0.5.9
 eth-hash==0.2.0
 eth-keyfile==0.5.1
 eth-keys==0.2.0b3
